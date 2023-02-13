@@ -23,6 +23,7 @@ endif #juno
 ifeq ($(PLATFORM_FLAVOR),qemu_armv8a)
 include core/arch/arm/cpu/cortex-armv8-0.mk
 CFG_ARM64_core ?= y
+default-user-ta-target ?= ta_arm64
 endif
 
 
@@ -147,3 +148,5 @@ ifeq ($(CFG_DT_DRIVER_EMBEDDED_TEST),y)
 $(call force,CFG_EMBED_DTB_SOURCE_FILE,embedded_dtb_test.dts,Mandated for DT tests)
 endif
 endif
+
+CFG_PKCS11_TA ?= y
